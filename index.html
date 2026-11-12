@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101813" />
+  <title>VERDANT // THE PIXEL WOUND</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="3D action RPG game"></canvas>
+    <div class="grain"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Verdant home"><span class="mark">V</span><span>VERDANT<span class="slash"> //</span> <b>THE PIXEL WOUND</b></span></a>
+      <div class="top-meta"><span class="live-dot"></span> FIELD SIMULATION <span class="meta-sep">/</span> CHAPTER 01</div>
+      <button id="guide-toggle" class="icon-button" title="Open field guide">?</button>
+    </header>
+    <section class="hud">
+      <div class="player-panel panel">
+        <div class="eyebrow">WAYFARER <span>LV. 04</span></div>
+        <div class="health-line"><span>VITALITY</span><strong id="health-value">100</strong></div>
+        <div class="meter"><i id="health-bar"></i></div>
+        <div class="stamina-line"><span>STAMINA</span><div class="meter small"><i id="stamina-bar"></i></div></div>
+        <div class="gear-row"><span class="gear-icon">◇</span><span id="weapon-label">ASHEN SWORD</span><kbd>1</kbd></div>
+      </div>
+      <div class="zone-panel panel" id="zone-panel">
+        <div class="zone-head"><span class="zone-symbol">◉</span><span id="zone-state">ACTIVE INFECTION</span><span class="zone-alert">● LIVE</span></div>
+        <div class="zone-name">THE MOSSWOUND</div>
+        <div class="zone-info"><span>REACH <b id="zone-radius">14m</b></span><span>THREAT <b id="threat-count">02</b></span></div>
+        <div class="zone-track"><i id="zone-progress"></i></div>
+        <div class="zone-note" id="zone-note">SPREADING · 2 PIXEL BEASTS REMAIN</div>
+      </div>
+      <div class="inventory-panel panel">
+        <div class="eyebrow">FIELD KIT</div>
+        <div class="resource-row"><span class="resource-gem">✦</span><span>PIXEL SHARDS</span><b id="shard-count">00</b></div>
+        <div class="resource-row"><span class="seed-icon">⬡</span><span>PIXEL SEED</span><b id="seed-count">01</b></div>
+        <div class="inventory-hint">HARVEST · <kbd>R</kbd></div>
+      </div>
+    </section>
+    <div class="crosshair"><i></i><b></b><i></i></div>
+    <div class="action-toast" id="toast"><span>✦</span><b>THE LAND REMEMBERS</b><small>Choose what the wound becomes.</small></div>
+    <div class="center-prompt" id="prompt"></div>
+    <div class="combat-flash" id="combat-flash"></div>
+    <footer class="bottom-hud">
+      <div class="controls-legend"><span><kbd>WASD</kbd> MOVE</span><span><kbd>SHIFT</kbd> DODGE</span><span><kbd>SPACE</kbd> ATTACK</span><span><kbd>RMB</kbd> BLOCK</span><span><kbd>Q</kbd> PARRY</span><span><kbd>E</kbd> PURIFY</span><span><kbd>F</kbd> PLANT SEED</span></div>
+      <div class="weapon-wheel">
+        <button class="weapon-slot active" data-weapon="sword"><span>⚔</span><small>01</small></button>
+        <button class="weapon-slot" data-weapon="spear"><span>↟</span><small>02</small></button>
+        <button class="weapon-slot" data-weapon="shield"><span>⬡</span><small>03</small></button>
+        <div class="weapon-caption"><small>EQUIPPED</small><b id="weapon-caption">ASHEN SWORD</b></div>
+      </div>
+    </footer>
+    <div class="zone-label"><span class="label-line"></span><span>THE MOSSWOUND</span><small>CONTAMINATION FRONT</small></div>
+    <div class="loading" id="loading"><div class="loading-mark">V</div><div>GROWING THE WOUND<span>...</span></div></div>
+    <aside class="guide-card" id="guide-card">
+      <button class="close-guide" id="close-guide">×</button>
+      <div class="eyebrow">FIELD MANUAL / 01</div>
+      <h2>Every wound<br>is a choice.</h2>
+      <p>The Pixel Virus is rewriting this forest. Clear its beasts, then decide what grows in their place.</p>
+      <div class="guide-choice"><span class="choice-icon heal">✧</span><div><b>PURIFY <kbd>E</kbd></b><small>With the zone clear, heal the forest. The boundary recedes and the organic world returns.</small></div></div>
+      <div class="guide-choice"><span class="choice-icon seed">⬡</span><div><b>PLANT A SEED <kbd>F</kbd></b><small>Stabilize the wound. Stop its spread but keep a pixel sanctuary for rare shards, beasts, and hidden geometry.</small></div></div>
+      <div class="guide-footer">SWORD · SPEAR · SHIELD <span>1 / 2 / 3 TO SWITCH</span></div>
+    </aside>
+    <div class="mobile-controls" aria-label="Touch controls">
+      <div class="move-pad"><button data-move="forward">▲</button><button data-move="left">◀</button><button data-move="back">▼</button><button data-move="right">▶</button></div>
+      <div class="touch-actions"><button data-action="attack">HIT</button><button data-action="dodge">DODGE</button><button data-action="interact">ACT</button></div>
+    </div>
+    <div class="vignette"></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
