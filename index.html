@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <title>Stickbound</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="hud">
+    <div class="topbar">
+      <div class="brand"><span class="crest">✦</span><div><small>CHAPTER I</small><strong>THE WHISPERING WOOD</strong></div></div>
+      <div class="resources"><span>◈ <b id="coins">0</b></span><span>◆ <b id="gems">0</b></span></div>
+    </div>
+    <div class="player-card">
+      <div class="portrait"><span>⚔</span></div>
+      <div class="player-info"><strong>STICK</strong><div class="bar hp"><i id="hpBar"></i><em id="hpText">100 / 100</em></div><div class="bar xp"><i id="xpBar"></i></div></div>
+      <div class="level"><small>LV.</small><b id="level">1</b></div>
+    </div>
+  </div>
+  <aside id="quest">
+    <small>ACTIVE QUEST</small>
+    <strong id="questTitle">Slime Trouble</strong>
+    <p id="questText">Defeat forest slimes <span id="questCount">0 / 5</span></p>
+  </aside>
+  <div id="dialogue" class="hidden">
+    <div class="dialogue-box"><div class="speaker" id="speaker">Elder Rowan</div><p id="dialogueText"></p><button id="dialogueNext">CONTINUE</button></div>
+  </div>
+  <div id="toast"></div>
+  <div id="controls">
+    <div id="stick"><div id="knob"></div></div>
+    <div class="actions"><button id="dash" aria-label="Dash">↟<small>DASH</small></button><button id="attack" aria-label="Attack">⚔<small>ATTACK</small></button></div>
+  </div>
+  <div id="menuHint">WASD / ARROWS · J ATTACK · K DASH · E TALK</div>
+  <script src="game.js"></script>
+</body>
+</html>
